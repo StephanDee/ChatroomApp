@@ -1,28 +1,29 @@
-import React from 'react';
+import React from "react";
 
 class Login extends React.Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props) {
-        super(props);
+    this.state = {
+      username: this.props.username
+    };
+  }
 
-        this.state = {
-            username: this.props.username
-        }
-    }
-
-    onSubmitButtonClicked(event) {
-        event.preventDefault();
-        this.props.setUsername(event.target.username.value);
-    }
+  onSubmitButtonClicked(event) {
+    event.preventDefault();
+    this.props.setUsername(event.target.username.value);
+  }
 
   render() {
     return (
       <div className="login">
-          <form onSubmit={(event) => this.onSubmitButtonClicked(event)}>
-              <label>Benutzername:</label><br />
-              <input type="text" id="username"/><br />
-              <input type="submit" value="Login"/>
-          </form>
+        <form onSubmit={event => this.onSubmitButtonClicked(event)}>
+          <label>Benutzername:</label>
+          <br />
+          <input type="text" id="username" />
+          <br />
+          <input type="submit" value="Login" />
+        </form>
       </div>
     );
   }

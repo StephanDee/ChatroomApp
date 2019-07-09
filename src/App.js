@@ -1,9 +1,9 @@
-import React from 'react';
-import './App.css';
-import Login from './components/Login'
+import React from "react";
+import "./App.css";
+import Login from "./components/Login";
+import MessagingPanel from "./components/MessagingPanel";
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
 
@@ -17,13 +17,17 @@ class App extends React.Component {
       username: username
     });
 
-   console.log(this.state.username);
+    console.log(this.state.username);
   }
 
   render() {
     return (
       <div className="App">
-        <Login setUsername={(event) => this.setUsername(event)}/>
+        {!this.state.username ? (
+          <Login setUsername={event => this.setUsername(event)} />
+        ) : (
+          <MessagingPanel />
+        )}
       </div>
     );
   }
