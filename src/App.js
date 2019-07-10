@@ -12,12 +12,10 @@ class App extends React.Component {
     };
   }
 
-  async setUsername(username) {
-    await this.setState({
+  setUsername(username) {
+    this.setState({
       username: username
     });
-
-    console.log(this.state.username);
   }
 
   render() {
@@ -26,7 +24,7 @@ class App extends React.Component {
         {!this.state.username ? (
           <Login setUsername={event => this.setUsername(event)} />
         ) : (
-          <MessagingPanel />
+          <MessagingPanel username={this.state.username} />
         )}
       </div>
     );

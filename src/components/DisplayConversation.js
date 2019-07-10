@@ -4,7 +4,11 @@ class DisplayConversation extends React.Component {
   render() {
     return (
       <div className="displayConversation">
-        <p>Displayconversation</p>
+        {this.props.messages.map((message, index) => (
+          <div key={index}>
+            {message.username}: {message.message}
+          </div>
+        ))}
       </div>
     );
   }
