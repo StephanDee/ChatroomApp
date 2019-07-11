@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Login from "./components/Login";
+import Login from "./components/login/Login";
 import MessagingPanel from "./components/MessagingPanel";
 
 class App extends React.Component {
