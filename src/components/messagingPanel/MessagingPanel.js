@@ -1,12 +1,14 @@
 import React, { Fragment } from "react";
-import DisplayConversation from "./DisplayConversation";
-import MessagingBox from "./MessagingBox";
+import { CardContent, Card } from "@material-ui/core";
+import DisplayConversation from "../displayConversation/DisplayConversation";
+import MessagingBox from "../MessagingBox";
 
 class MessagingPanel extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      username: this.props.username,
       messages: []
     };
   }
@@ -31,8 +33,13 @@ class MessagingPanel extends React.Component {
   render() {
     return (
       <Fragment>
-        <DisplayConversation messages={this.state.messages} />
-        <MessagingBox getMessage={message => this.getMessage(message)} />
+        <Card className="card">
+          <CardContent>
+            <h1>Chat</h1>
+            <DisplayConversation messages={this.state.messages} username={this.state.username}/>
+            <MessagingBox getMessage={message => this.getMessage(message)} />
+          </CardContent>
+        </Card>
       </Fragment>
     );
   }

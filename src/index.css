@@ -22,3 +22,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.grey-bg {
+  border: 1px;
+  border-color: black;
+}
+
+.card {
+  margin: auto;
+  max-width: 345px;
+}
+
+.padding-1 {
+  padding: 8px;
+}
+
+.margin-top-1 {
+  margin-top: 8px;
+}
+
+.margin-top-2 {
+  margin-top: 16px;
+}

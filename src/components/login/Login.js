@@ -27,35 +27,40 @@ class Login extends React.Component {
     }
   }
 
+  preventReload(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+    }
+  }
+
   render() {
     return (
-      <div className="login">
-        <Card className="card">
-          <CardContent>
-            <h1>Chatroom App</h1>
-            <form>
-              <TextField
-                label="Name"
-                id="username"
-                onChange={event => this.inputHandler(event)}
-                placeholder="Max Mustermann"
-                fullWidth
-              />
-            </form>
-          </CardContent>
-          <CardActions>
-            <Button
-              variant="contained"
-              color="primary"
-              size="small"
-              disabled={!this.state.username}
-              onClick={() => this.onSubmitButtonClicked(this.state.username)}
-            >
-              sign in
-            </Button>
-          </CardActions>
-        </Card>
-      </div>
+      <Card className="card">
+        <CardContent>
+          <h1>Chatroom beitreten</h1>
+          <form>
+            <TextField
+              label="Name"
+              id="username"
+              onChange={event => this.inputHandler(event)}
+              onKeyDown={event => this.preventReload(event)}
+              placeholder="Max Mustermann"
+              fullWidth
+            />
+          </form>
+        </CardContent>
+        <CardActions>
+          <Button
+            variant="contained"
+            color="primary"
+            size="small"
+            disabled={!this.state.username}
+            onClick={() => this.onSubmitButtonClicked(this.state.username)}
+          >
+            sign in
+          </Button>
+        </CardActions>
+      </Card>
     );
   }
 }

@@ -1,0 +1,12 @@
+.currentUser {
+    text-align: end;
+    background-color: lightgreen;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.otherUsers {
+    background-color: lightblue;
+    padding: 8px;
+    border-radius: 4px;
+}

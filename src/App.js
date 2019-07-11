@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import Login from "./components/login/Login";
-import MessagingPanel from "./components/MessagingPanel";
+import MessagingPanel from "./components/messagingPanel/MessagingPanel";
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="padding-1">
         {!this.state.username ? (
           <Login setUsername={event => this.setUsername(event)} />
         ) : (
