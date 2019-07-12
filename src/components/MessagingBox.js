@@ -7,7 +7,7 @@ class MessagingBox extends React.Component {
     super(props);
 
     this.state = {
-      message: null
+      message: ""
     };
   }
 

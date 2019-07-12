@@ -10,3 +10,8 @@
     padding: 8px;
     border-radius: 4px;
 }
+
+.otherUsername {
+    font-weight: bold;
+    font-style: italic;
+}

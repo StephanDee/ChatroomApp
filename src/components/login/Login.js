@@ -6,6 +6,14 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 
+/*
+ * @Author: Stephan Dünkel 
+ * @Date: 2019-07-12 20:17:29 
+ * @Last Modified by: Stephan Dünkel
+ * @Last Modified time: 2019-07-12 20:28:11
+ * 
+ * The Login Component.
+ */
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -15,18 +23,33 @@ class Login extends React.Component {
     };
   }
 
+  /**
+   * Handles the Inputs.
+   *
+   * @param event The event input object
+   */
   inputHandler(event) {
     this.setState({ username: event.target.value });
   }
 
+  /**
+   * Sets the username on submit.
+   *
+   * @param username The username
+   */
   onSubmitButtonClicked(username) {
     if (username && username !== "") {
       this.props.setUsername(username);
     } else {
-      console.log("Bitte geben sie einen Benutzernamen ein.");
+      console.log("Bitte geben Sie einen Benutzernamen ein.");
     }
   }
 
+  /**
+   * Checks if the Enterbutton was clicked, if so then prevent from reload event.
+   *
+   * @param event The event input object
+   */
   preventReload(event) {
     if (event.keyCode === 13) {
       event.preventDefault();
@@ -57,7 +80,7 @@ class Login extends React.Component {
             disabled={!this.state.username}
             onClick={() => this.onSubmitButtonClicked(this.state.username)}
           >
-            sign in
+            Einloggen
           </Button>
         </CardActions>
       </Card>

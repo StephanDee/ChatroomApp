@@ -25,7 +25,7 @@ class MessagingPanel extends React.Component {
   getMessage(message) {
     const data = {
       username: this.props.username,
-      message: message
+      message: encodeURI(message)
     };
     this.connection.send(JSON.stringify(data));
   }
