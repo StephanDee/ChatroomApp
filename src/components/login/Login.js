@@ -6,13 +6,13 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 
-/*
+/**
  * @Author: Stephan Dünkel 
  * @Date: 2019-07-12 20:17:29 
  * @Last Modified by: Stephan Dünkel
- * @Last Modified time: 2019-07-12 20:28:11
+ * @Last Modified time: 2019-07-13 15:53:43
  * 
- * The Login Component.
+ * The login component.
  */
 class Login extends React.Component {
   constructor(props) {

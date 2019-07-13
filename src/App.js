@@ -3,6 +3,14 @@ import "./App.css";
 import Login from "./components/login/Login";
 import MessagingPanel from "./components/messagingPanel/MessagingPanel";
 
+/**
+ * @Author: Stephan Dünkel
+ * @Date: 2019-07-13 15:46:29
+ * @Last Modified by: Stephan Dünkel
+ * @Last Modified time: 2019-07-13 15:53:38
+ *
+ * The app component representing the main component of the app.
+ */
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +20,11 @@ class App extends React.Component {
     };
   }
 
+  /**
+   * Sets the username.
+   *
+   * @param username the username
+   */
   setUsername(username) {
     this.setState({
       username: username

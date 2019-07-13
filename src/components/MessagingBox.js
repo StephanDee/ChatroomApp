@@ -2,6 +2,14 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
+/**
+ * @Author: Stephan Dünkel 
+ * @Date: 2019-07-13 15:50:48 
+ * @Last Modified by: Stephan Dünkel
+ * @Last Modified time: 2019-07-13 15:53:11
+ *
+ * The messaging box component.
+ */
 class MessagingBox extends React.Component {
   constructor(props) {
     super(props);
@@ -11,10 +19,20 @@ class MessagingBox extends React.Component {
     };
   }
 
+  /**
+   * Handles the messages.
+   *
+   * @param event The input event
+   */
   messageHandler(event) {
     this.setState({ message: event.target.value });
   }
 
+  /**
+   * Send the message.
+   *
+   * @param message The message
+   */
   sendMessage(message) {
     if (message !== "") {
       this.props.getMessage(message);

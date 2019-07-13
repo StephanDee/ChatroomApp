@@ -1,6 +1,14 @@
 import React from "react";
 import "./DisplayConversation.css";
 
+/**
+ * @Author: Stephan Dünkel 
+ * @Date: 2019-07-13 15:57:20 
+ * @Last Modified by: Stephan Dünkel
+ * @Last Modified time: 2019-07-13 15:57:44
+ *
+ * The display conversation component.
+ */
 class DisplayConversation extends React.Component {
   render() {
     return (
