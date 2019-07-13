@@ -1,4 +1,8 @@
+# ChatroomApp
+
 This is the frontend application of ChatroomServer.
+
+The Project can be connected with the ChatroomServer and creates a simple Chatroom where anyone can join and chat.
 
 ## React Information
 
