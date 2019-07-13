@@ -4,10 +4,10 @@ import DisplayConversation from "../displayConversation/DisplayConversation";
 import MessagingBox from "../MessagingBox";
 
 /**
- * @Author: Stephan Dünkel 
- * @Date: 2019-07-13 15:53:49 
+ * @Author: Stephan Dünkel
+ * @Date: 2019-07-13 15:53:49
  * @Last Modified by: Stephan Dünkel
- * @Last Modified time: 2019-07-13 15:57:00
+ * @Last Modified time: 2019-07-13 16:02:52
  *
  * The messaging panel component.
  */
@@ -30,8 +30,12 @@ class MessagingPanel extends React.Component {
   componentDidMount() {
     // Observe connection
     this.connection.onmessage = message => {
-      const data = JSON.parse(message.data);
-      this.setState({ messages: [...this.state.messages, data] });
+      try {
+        const data = JSON.parse(message.data);
+        this.setState({ messages: [...this.state.messages, data] });
+      } catch (error) {
+        console.log(error);
+      }
     };
   }
 
@@ -45,7 +49,12 @@ class MessagingPanel extends React.Component {
       username: this.props.username,
       message: encodeURI(message)
     };
-    this.connection.send(JSON.stringify(data));
+
+    try {
+      this.connection.send(JSON.stringify(data));
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   render() {
@@ -54,7 +63,10 @@ class MessagingPanel extends React.Component {
         <Card className="card">
           <CardContent>
             <h1>Chat</h1>
-            <DisplayConversation messages={this.state.messages} username={this.state.username}/>
+            <DisplayConversation
+              messages={this.state.messages}
+              username={this.state.username}
+            />
             <MessagingBox getMessage={message => this.getMessage(message)} />
           </CardContent>
         </Card>
