@@ -10,14 +10,29 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 
+/*
+ * @Author: Stephan Dünkel
+ * @Date: 2019-07-16 21:19:54
+ * @Last Modified by: Stephan Dünkel
+ * @Last Modified time: 2019-07-16 21:22:55
+ *
+ * Testcases for the Login component.
+ */
 configure({ adapter: new Adapter() });
 
+// Wrappers
 let wrapperApp;
 let wrapperLogin;
 
 beforeEach(() => {
   wrapperApp = shallow(<App />);
-  wrapperLogin = shallow(<Login setUsername={event => {wrapperApp.instance().setUsername(event)}} />);
+  wrapperLogin = shallow(
+    <Login
+      setUsername={event => {
+        wrapperApp.instance().setUsername(event);
+      }}
+    />
+  );
 });
 
 describe("<Login />", () => {
@@ -34,14 +49,36 @@ describe("<Login />", () => {
   it("checks the login username TextField", () => {
     let textField = wrapperLogin.find(TextField);
     textField.value = "test";
+
     expect(textField.value).toEqual("test");
   });
 
-  it("checks the onSubmitClick event", () => {
+  it("checks the onSubmitButtonClicked event with normal value", () => {
     let button = wrapperLogin.find(Button);
+
     wrapperLogin.setState({ username: "test" });
-    expect(wrapperLogin.state().username).toEqual("test");
     button.simulate("click");
+
+    expect(wrapperLogin.state().username).toEqual("test");
     expect(wrapperApp.state().username).toEqual("test");
+  });
+
+  it("checks the onSubmitButtonClicked event with invalid value", () => {
+    let button = wrapperLogin.find(Button);
+
+    wrapperLogin.setState({ username: "" });
+    button.simulate("click");
+
+    expect(wrapperLogin.state().username).toEqual("");
+    expect(wrapperApp.state().username).toEqual(null);
+  });
+
+  it("checks the onSubmitButtonClicked event without value", () => {
+    let button = wrapperLogin.find(Button);
+
+    button.simulate("click");
+
+    expect(wrapperLogin.state().username).toEqual(undefined);
+    expect(wrapperApp.state().username).toEqual(null);
   });
 });
