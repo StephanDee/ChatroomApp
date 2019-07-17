@@ -10,11 +10,11 @@ import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 
-/*
+/**
  * @Author: Stephan Dünkel
  * @Date: 2019-07-16 21:19:54
  * @Last Modified by: Stephan Dünkel
- * @Last Modified time: 2019-07-17 09:06:42
+ * @Last Modified time: 2019-07-17 10:51:17
  *
  * Testcases for the Login component.
  */

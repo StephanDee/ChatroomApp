@@ -6,11 +6,11 @@ import MessagingBox from "./MessagingBox";
 import MessagingPanel from "../messagingPanel/MessagingPanel";
 import { TextField, Button } from "@material-ui/core";
 
-/*
+/**
  * @Author: Stephan Dünkel
  * @Date: 2019-07-17 09:10:09
  * @Last Modified by: Stephan Dünkel
- * @Last Modified time: 2019-07-17 10:41:18
+ * @Last Modified time: 2019-07-17 10:51:18
  *
  * Testcases for the MessagingBox component.
  */
@@ -51,7 +51,7 @@ describe("<App />", () => {
   });
 
   // TODO: Check JSON-Response
-  // Currently getting InvalidStateError: Still CONNECTING State 
+  // Currently getting InvalidStateError: Still CONNECTING State
   it("!!! checks the sendMessage event on click button [Cannot be trusted yet!] !!!", () => {
     const expectedValue = "test";
     // let button = wrapper.find(Button);
