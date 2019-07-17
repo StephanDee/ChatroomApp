@@ -3,7 +3,7 @@ import Login from "./Login";
 import App from "../../App";
 import { configure } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
-import { shallow, mount, render } from "enzyme";
+import { shallow } from "enzyme";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
@@ -14,7 +14,7 @@ import CardContent from "@material-ui/core/CardContent";
  * @Author: Stephan Dünkel
  * @Date: 2019-07-16 21:19:54
  * @Last Modified by: Stephan Dünkel
- * @Last Modified time: 2019-07-16 21:22:55
+ * @Last Modified time: 2019-07-17 09:06:42
  *
  * Testcases for the Login component.
  */

@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 import { CardContent, Card } from "@material-ui/core";
 import DisplayConversation from "../displayConversation/DisplayConversation";
-import MessagingBox from "../MessagingBox";
+import MessagingBox from "../messagingBox/MessagingBox";
 
 /**
  * @Author: Stephan Dünkel
  * @Date: 2019-07-13 15:53:49
  * @Last Modified by: Stephan Dünkel
- * @Last Modified time: 2019-07-13 16:02:52
+ * @Last Modified time: 2019-07-17 09:08:15
  *
  * The messaging panel component.
  */

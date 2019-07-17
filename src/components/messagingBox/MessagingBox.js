@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
  * @Author: Stephan Dünkel 
  * @Date: 2019-07-13 15:50:48 
  * @Last Modified by: Stephan Dünkel
- * @Last Modified time: 2019-07-13 15:53:11
+ * @Last Modified time: 2019-07-17 09:41:35
  *
  * The messaging box component.
  */
@@ -44,7 +44,7 @@ class MessagingBox extends React.Component {
 
   render() {
     return (
-      <div className="messagingBox margin-top-2">
+      <div className="margin-top-2">
         <TextField
           placeholder="Nachricht eingeben"
           variant="outlined"
