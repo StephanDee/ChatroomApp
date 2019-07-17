@@ -8,7 +8,7 @@ import { shallow } from "enzyme";
  * @Author: Stephan Dünkel
  * @Date: 2019-07-17 11:08:42
  * @Last Modified by: Stephan Dünkel
- * @Last Modified time: 2019-07-17 11:21:34
+ * @Last Modified time: 2019-07-17 11:23:36
  *
  * Testcases for the DisplayConversation component.
  */
@@ -21,14 +21,9 @@ beforeEach(() => {
   const data = {
     username: "test",
     message: "test"
-  }
+  };
 
-  wrapper = shallow(
-    <DisplayConversation
-      messages={[data]}
-      username="test"
-    />
-  );
+  wrapper = shallow(<DisplayConversation messages={[data]} username="test" />);
 });
 
 describe("<MessagingPanel />", () => {
